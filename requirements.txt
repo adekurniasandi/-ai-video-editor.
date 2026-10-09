@@ -1,0 +1,7 @@
+fastapi>=0.115,<1.0
+uvicorn[standard]>=0.30,<1.0
+pydantic>=2.8,<3.0
+# [default] memasang yt-dlp-ejs; 'deno' = runtime JS yang kini wajib untuk YouTube (yt-dlp >= 2025.11)
+yt-dlp[default]>=2026.8.19
+deno>=2.3,<3
+faster-whisper>=1.1,<2.0

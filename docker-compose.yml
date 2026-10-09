@@ -1,0 +1,16 @@
+# Jalankan backend di komputer sendiri:  docker compose up --build
+# Lalu (opsional, agar bisa diakses dari HP lewat situs Vercel):  cloudflared tunnel --url http://localhost:7860
+services:
+  clipforge-api:
+    build:
+      context: ./backend
+      args:
+        WHISPER_MODEL: ${WHISPER_MODEL:-base}
+    ports:
+      - "7860:7860"
+    environment:
+      ALLOWED_ORIGINS: ${ALLOWED_ORIGINS:-*}
+      MAX_SOURCE_SECONDS: ${MAX_SOURCE_SECONDS:-600}
+      RATE_LIMIT_PER_HOUR: ${RATE_LIMIT_PER_HOUR:-6}
+      YTDLP_COOKIES: ${YTDLP_COOKIES:-}
+    restart: unless-stopped

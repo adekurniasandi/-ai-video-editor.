@@ -1,0 +1,9 @@
+{
+  "name": "clipforge",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "ClipForge: klip vertikal 9:16 dari YouTube (frontend statis + backend FastAPI)",
+  "scripts": { "build": "node scripts/build.mjs" },
+  "engines": { "node": ">=18" }
+}
